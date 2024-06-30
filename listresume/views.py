@@ -4,20 +4,14 @@ from listresume.templates import *
 from createresume.models import *
 from django.template.loader import get_template
 from xhtml2pdf import pisa
+from listresume.serializers import PersonalDetailsSerializer
 
 # Create your views here.
 def ListResume(request):
     objects = PersonalDetails.objects.all()
-    items = []
-    for obj in objects:
-        items.append(
-            {
-                'id' : obj.id,
-                'title' :  obj.name +", "+ str(obj.dob)
-            }
-        )
+    serializer = PersonalDetailsSerializer(objects, many=True)
     
-    return render(request,'listresume/list.html', {'items': items})
+    return render(request,'listresume/list.html', {'items': serializer.data})
 
 def DeleteResume(request, id):
     obj = PersonalDetails.objects.get(id=id)
