@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def HomeApi(request):
-    return render(request,'home.html')
+    return render(request,'index.html')
 
 def Success(request):
     return HttpResponse("Success")

@@ -41,90 +41,79 @@
     </style>
 </head>
 <body>
+    <center><h1>Resume</h1></center>
     <div class="container">
-        <h1>Resume</h1>
         <div class="personal-details section">
             <h2>Personal Details</h2>
-            <div><span class="label">Name:</span> </div>
-            <div><span class="label">Date of Birth:</span> January 1, 1990</div>
-            <div><span class="label">Phone Number:</span> 123-456-7890</div>
-            <div><span class="label">Gender:</span> Male</div>
-            <div><span class="label">Address:</span> 123 Main St, Anytown, USA</div>
-            <div><span class="label">Parents' Names:</span> Jane Doe & John Smith</div>
-            <div><span class="label">Current Location:</span> Anytown, USA</div>
+            <div><span class="label">Name:</span> {{name | capfirst}} </div>
+            <div><span class="label">Date of Birth:</span> {{dob }} </div>
+            <div><span class="label">Phone Number:</span> {{phNumber}} </div>
+            <div><span class="label">Gender:</span> {{gender | capfirst}} </div>
+            <div><span class="label">Address:</span> {{address | capfirst}} </div>
+            <div><span class="label">Parents' Names:</span> {{parents_name | capfirst}} </div>
+            <div><span class="label">Current Location:</span> {{current_location | capfirst}} </div>
         </div>
         
         <div class="education section">
             <h2>Education</h2>
             <div class="school-education">
                 <h3>School Education</h3>
-                <div><span class="label">School Name:</span> Anytown High School</div>
-                <div><span class="label">Pass Year:</span> 2008</div>
-                <div><span class="label">Percentage:</span> 90%</div>
-                <div><span class="label">Board:</span> State Board</div>
-                <div><span class="label">District:</span> Anytown</div>
-                <div><span class="label">State:</span> AnyState</div>
+                <div><span class="label">School Name:</span> {{school_education.school_name | capfirst}} </div>
+                <div><span class="label">Pass Year:</span> {{school_education.pass_year}} </div>
+                <div><span class="label">Percentage:</span> {{school_education.percentage}}% </div>
+                <div><span class="label">Board:</span> {{school_education.board | capfirst}} </div>
+                <div><span class="label">District:</span> {{school_education.district | capfirst}} </div>
+                <div><span class="label">State:</span> {{school_education.state | capfirst}} </div>
             </div>
             <div class="college-education">
                 <h3>College Education</h3>
-                <div><span class="label">College Name:</span> Anytown College</div>
-                <div><span class="label">Pass Year:</span> 2012</div>
-                <div><span class="label">Percentage:</span> 85%</div>
-                <div><span class="label">Board:</span> State Board</div>
-                <div><span class="label">District:</span> Anytown</div>
-                <div><span class="label">State:</span> AnyState</div>
+                <div><span class="label">College Name:</span> {{college_education.college_name | capfirst}} </div>
+                <div><span class="label">Pass Year:</span> {{college_education.pass_year}} </div>
+                <div><span class="label">Percentage:</span> {{college_education.percentage}}%</div>
+                <div><span class="label">Board:</span> {{college_education.board | capfirst}} </div>
+                <div><span class="label">District:</span> {{college_education.district | capfirst}} </div>
+                <div><span class="label">State:</span> {{college_education.state | capfirst}} </div>
             </div>
             <div class="university-education">
                 <h3>University Education</h3>
-                <div><span class="label">University Name:</span> Anytown University</div>
-                <div><span class="label">Pass Year:</span> 2016</div>
-                <div><span class="label">Percentage:</span> 80%</div>
-                <div><span class="label">Course:</span> Bachelor of Science</div>
-                <div><span class="label">Branch:</span> Computer Science</div>
-                <div><span class="label">District:</span> Anytown</div>
-                <div><span class="label">State:</span> AnyState</div>
+                <div><span class="label">University Name:</span> {{university_education.university_name | capfirst}} </div>
+                <div><span class="label">Pass Year:</span> {{university_education.pass_year}} </div>
+                <div><span class="label">Percentage:</span> {{university_education.percentage}}%</div>
+                <div><span class="label">Course:</span> {{university_education.course | capfirst}} </div>
+                <div><span class="label">Branch:</span> {{university_education.branch | capfirst}} </div>
+                <div><span class="label">District:</span> {{university_education.district | capfirst}} </div>
+                <div><span class="label">State:</span> {{university_education.state | capfirst}} </div>
             </div>
         </div>
         
         <div class="skills section">
             <h2>Skills</h2>
-            <div><span class="label">Programming Languages:</span> Python, Java, C++</div>
-            <div><span class="label">Technologies:</span> HTML, CSS, JavaScript, React, Node.js</div>
+            <div><span class="label">Programming Languages:</span> {{skills.programming_languages | title}} </div>
+            <div><span class="label">Technologies:</span> {{skills.technologies | title}} </div>
         </div>
         
         <div class="projects section">
             <h2>Projects</h2>
             <div>
-                <span class="label">Project Name:</span> Project One<br>
-                <span class="label">Domain:</span> Web Development<br>
-                <span class="label">Technologies Used:</span> HTML, CSS, JavaScript, React
-            </div>
-            <div>
-                <span class="label">Project Name:</span> Project Two<br>
-                <span class="label">Domain:</span> Machine Learning<br>
-                <span class="label">Technologies Used:</span> Python, TensorFlow, Keras
+                <span class="label">Project Name:</span> {{projects.project_name | capfirst}} <br>
+                <span class="label">Domain:</span> {{projects.domain | capfirst}} <br>
+                <span class="label">Technologies Used:</span> {{projects.technologies_used | title}}
             </div>
         </div>
         
         <div class="experience section">
             <h2>Experience</h2>
             <div>
-                <span class="label">Company Name:</span> TechCorp<br>
-                <span class="label">Role:</span> Software Engineer<br>
-                <span class="label">Duration:</span> 2016-2019<br>
-                <span class="label">Technologies Worked On:</span> Java, Spring, Hibernate
-            </div>
-            <div>
-                <span class="label">Company Name:</span> WebSolutions<br>
-                <span class="label">Role:</span> Frontend Developer<br>
-                <span class="label">Duration:</span> 2019-Present<br>
-                <span class="label">Technologies Worked On:</span> HTML, CSS, JavaScript, React
+                <span class="label">Company Name:</span> {{experience.company_name | capfirst}} <br>
+                <span class="label">Role:</span> {{experience.role | capfirst}} <br>
+                <span class="label">Duration:</span> {{experience.duration}} <br>
+                <span class="label">Technologies Worked On:</span> {{experience.technologies_worked_on | title}}
             </div>
         </div>
         
         <div class="hobbies section">
             <h2>Hobbies</h2>
-            <div>Reading, Traveling, Coding</div>
+            <div> {{hobbies | title}} </div>
         </div>
     </div>
 </body>

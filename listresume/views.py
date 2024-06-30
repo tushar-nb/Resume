@@ -65,21 +65,17 @@ def ViewResume(request, id):
             'programming_languages': skill.programming_languages,
             'technologies': skill.technologies
         },
-        'projects': [
-            {
+        'projects': {
                 'project_name': project.project_name,
                 'domain': project.domain,
                 'technologies_used': project.technologies_used
-            },
-        ],
-        'experience': [
-            {
+        },
+        'experience': {
                 'company_name': experience.company_name,
                 'role': experience.role,
                 'duration': experience.duration,
                 'technologies_worked_on': experience.technologies_worked_on
-            },
-        ],
+        },
         'hobbies': hobby.hobby,
     }
     return render_to_pdf('listresume/viewresume.html', context)
