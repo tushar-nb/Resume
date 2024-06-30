@@ -1,0 +1,31 @@
+TABLE: Personal_Details
+ATTRIBUTES:Id(auto increment), Name, dob, phone number, gender, address, parents name, current location
+PRIMARI KEY: Id
+
+TABLE: School Education 
+ATTRIBUTES:id, school name, pass year, percentage, board, district , state
+FOREIGN KEY:id REFERENCES Personal_Details(id)
+
+TABLE: College Education
+ATTRIBUTES:id, college name, pass year, percentage,board, district, state
+FOREIGN KEY:id REFERENCES Personal_Details(id)
+
+TABLE: University Education
+ATTRIBUTES:id, university name, pass year, percentage, course,branch,university, district, state
+FOREIGN KEY:id REFERENCES Personal_Details(id)
+
+TABLE: Skills
+ATTRIBUTES:id, Programming languages, technologies
+FOREIGN KEY:id REFERENCES Personal_Details(id)
+
+TABLE: Projects
+ATTRIBUTES:id, project name, domain, technologies used
+FOREIGN KEY:id REFERENCES Personal_Details(id)
+
+TABLE: Experience
+ATTRIBUTES:id, company name, role, duration, technologies worked on
+FOREIGN KEY:id REFERENCES Personal_Details(id)
+
+TABLE: Hobbies
+ATTRIBUTES:id, hobbies
+FOREIGN KEY:id REFERENCES Personal_Details(id)
