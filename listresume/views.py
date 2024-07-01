@@ -14,19 +14,25 @@ def ListResume(request):
     return render(request,'listresume/list.html', {'items': serializer.data})
 
 def DeleteResume(request, id):
-    obj = PersonalDetails.objects.get(id=id)
+    try:
+        obj = PersonalDetails.objects.get(id=id)
+    except:
+        return HttpResponse("<h2>No such id exists</h2>")
     obj.delete()
     return redirect('/listresume')
     
 def ViewResume(request, id):
-    personalDetails = PersonalDetails.objects.get(id = id)
-    schoolEdu = SchoolEducation.objects.get(school_id = id)
-    collegeEdu = CollegeEducation.objects.get(college_id = id)
-    universityEdu = UniversityEducation.objects.get(university_id = id)
-    skill = Skill.objects.get(skill_id = id)
-    project = Project.objects.get(project_id = id)
-    experience = Experience.objects.get(experience_id = id)
-    hobby = Hobby.objects.get(hobby_id = id)
+    try:
+        personalDetails = PersonalDetails.objects.get(id = id)
+        schoolEdu = SchoolEducation.objects.get(school_id = id)
+        collegeEdu = CollegeEducation.objects.get(college_id = id)
+        universityEdu = UniversityEducation.objects.get(university_id = id)
+        skill = Skill.objects.get(skill_id = id)
+        project = Project.objects.get(project_id = id)
+        experience = Experience.objects.get(experience_id = id)
+        hobby = Hobby.objects.get(hobby_id = id)
+    except:
+        return HttpResponse("<h2>No such id exists</h2>")
     
     context = {
         'name': personalDetails.name,
