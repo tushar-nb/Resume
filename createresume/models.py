@@ -29,7 +29,7 @@ class SchoolEducation(models.Model):
 class CollegeEducation(models.Model):
     college_id = models.ForeignKey(PersonalDetails, on_delete=models.CASCADE)
     college_name = models.CharField(max_length=255)
-    pass_year = models.IntegerField(max_length=4)
+    pass_year = models.IntegerField()
     percentage = models.FloatField(max_length=4)
     board = models.CharField(max_length=25)
     district = models.CharField(max_length=25)
@@ -41,7 +41,7 @@ class CollegeEducation(models.Model):
 class UniversityEducation(models.Model):
     university_id = models.ForeignKey(PersonalDetails, on_delete=models.CASCADE)
     university_name = models.CharField(max_length=100)
-    pass_year = models.IntegerField(max_length=4)
+    pass_year = models.IntegerField()
     percentage = models.FloatField(max_length=4)
     course = models.CharField(max_length=50)
     branch = models.CharField(max_length=50)
